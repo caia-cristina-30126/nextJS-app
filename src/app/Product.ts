@@ -6,7 +6,7 @@ interface Category {
   updatedAt: string;
 }
 
-export interface ApiResponse {
+export interface Product {
   id: number;
   title: string;
   price: number;
