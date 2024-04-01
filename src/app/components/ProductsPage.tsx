@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { Product } from "../Product";
 import ButtonComponent from "./common/ButtonComponent";
-
-async function getAllProducts() {
-  const response = await fetch("https://api.escuelajs.co/api/v1/products");
-  return response.json() as Promise<Product[]>;
-}
+import { getAllEntities } from "./common/utils";
 
 export default async function ProductsPage() {
-  const productsResponse = await getAllProducts();
+  const productsResponse = await getAllEntities<Product>(
+    "https://api.escuelajs.co/api/v1/products"
+  );
 
   return (
     <div className="bg-white">
@@ -24,7 +22,7 @@ export default async function ProductsPage() {
                 <div className="aspect-h-1 aspect-w-1  overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                   <img
                     src={product.images[0]}
-                    alt="Product Image"
+                    alt="Image"
                     className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                   />
                 </div>

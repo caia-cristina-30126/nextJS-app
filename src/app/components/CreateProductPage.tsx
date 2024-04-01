@@ -1,8 +1,8 @@
 "use client";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import Link from "next/link";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { Product } from "../Product";
 import ButtonComponent from "./common/ButtonComponent";
-import Link from "next/link";
 import NewProductForm from "./product/NewProductForm";
 
 export default function CreateProductPage() {

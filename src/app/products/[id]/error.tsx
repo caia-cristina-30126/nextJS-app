@@ -5,10 +5,8 @@ import Link from "next/link";
 
 export default function Error({
   error,
-  reset,
 }: {
   error: Error & { digest?: string };
-  reset: () => void;
 }) {
   return (
     <div className="ml-10 mt-10">

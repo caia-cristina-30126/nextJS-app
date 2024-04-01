@@ -1,9 +1,11 @@
 import { Product } from "@/app/Product";
 import Link from "next/link";
+import ButtonComponent from "../common/ButtonComponent";
 
 interface Props {
   product: Product;
 }
+
 export default function ProductComponent({ product }: Props) {
   return (
     <div className="pt-6">
@@ -51,9 +53,7 @@ export default function ProductComponent({ product }: Props) {
           </div>
         </div>
         <Link className="bg-white" href={"/products"}>
-          <button className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium hover:opacity-75">
-            See all products
-          </button>
+          <ButtonComponent actionText=" See all products" />
         </Link>
       </div>
     </div>

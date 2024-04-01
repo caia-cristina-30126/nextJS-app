@@ -1,7 +1,11 @@
+import { ChangeEvent, FormEvent } from "react";
+
 interface Props {
-  submitForm: () => void;
-  handleInput: () => void;
-  handleImageInput: () => void;
+  submitForm: (e: FormEvent<HTMLFormElement>) => void;
+  handleInput: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  handleImageInput: (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
   addImage: () => void;
   images: Set<string>;
 }
@@ -77,7 +81,12 @@ export default function CreateProductForm({
           className="form-control w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
 
-        <a onClick={addImage}>Add URL</a>
+        <a
+          className="mt-2 ml-2 w-32 bg-gray-900 text-white rounded-md px-7 py-2 text-sm font-medium hover:opacity-75"
+          onClick={addImage}
+        >
+          Add URL
+        </a>
         <ul>
           {Array.from(images).map((image, index) => (
             <li key={index}>{image}</li>

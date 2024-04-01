@@ -36,3 +36,15 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ESLint: [ESLint configuration](https://gourav.io/blog/nextjs-cheatsheet#add-eslint-to-nextjs-typescript-project)
+
+## What could be done to improve UI experience / functionality:
+
+1. Filtering categories by ID, so from the Home page, the user can click on one of the category and redirect to the products of that category.
+2. A button placed on All products and Create product pages that redirects to the Home page.
+3. CODE CLEANING: use Image from "next/image" instead of html <img /> tag ( which requires some configs in next.config.js.) .Also, could be nice to have a single ImageComponent in components folder and reuse this component.
+4. If the Category id doesn not exists, an alert should be displaying the error message / Category id could be a select and the user can select from the categories ids that already exist.
+5. A better user experience on the Create Product page:
+   I. On submit, image URL field can be empty after at least one image is added;
+   II. The user can have the possibility to delete the URL;
+6. A better user experience after the creation of the product: The response is displayed in an alert/snackbar so they can continue creating new products withoud having to return to Home page --> Create new product.
+7. Manage the invalid images URL's ( on Home and Products pages).
