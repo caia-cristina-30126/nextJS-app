@@ -1,5 +1,6 @@
 "use client";
 
+import ButtonComponent from "@/app/components/common/ButtonComponent";
 import Link from "next/link";
 
 export default function Error({
@@ -11,20 +12,13 @@ export default function Error({
 }) {
   return (
     <div className="ml-10 mt-10">
-      <h2>Something went wrong!</h2>
-      <div>{error.message}</div>
+      <h2 className="ml-2">Something went wrong!</h2>
+      <div className="ml-2">{error.message}</div>
 
-      <button
-        className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium hover:opacity-75"
-        onClick={() => reset()}
-      >
-        Try again
-      </button>
-      <div>or</div>
+      <ButtonComponent actionText="Try again" />
+      <div className="ml-2">or</div>
       <Link className="bg-white" href={"/products"}>
-        <button className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium hover:opacity-75">
-          Go back to products page
-        </button>
+        <ButtonComponent actionText=" Go back to products page" />
       </Link>
     </div>
   );

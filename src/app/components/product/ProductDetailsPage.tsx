@@ -1,6 +1,10 @@
 import { Product } from "../../Product";
 import ProductComponent from "./ProductComponent";
 
+interface Props {
+  id: number;
+}
+
 async function getData(id: number) {
   console.log(`IDDD HERE : ${id}`);
   const res = await fetch(`https://api.escuelajs.co/api/v1/products/${id}`);
@@ -12,10 +16,6 @@ async function getData(id: number) {
   }
 
   return res.json() as Promise<Product>;
-}
-
-interface Props {
-  id: number;
 }
 
 export default async function ProductDetailsPage({ id }: Props) {

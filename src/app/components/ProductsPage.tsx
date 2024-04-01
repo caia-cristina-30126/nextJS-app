@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Product } from "../Product";
-import ProductButton from "./common/ProductButton";
+import ButtonComponent from "./common/ButtonComponent";
 
 async function getAllProducts() {
   const response = await fetch("https://api.escuelajs.co/api/v1/products");
@@ -40,7 +40,7 @@ export default async function ProductsPage() {
                 </div>
               </div>
               <Link href={`/products/${product.id}`} key={product.id}>
-                <ProductButton />
+                <ButtonComponent actionText="See more" />
               </Link>
             </div>
           ))}
